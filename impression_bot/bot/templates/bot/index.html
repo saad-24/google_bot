@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="mx-5">
-        <form class="row g-3" method="POST" action="{% url 'start_bot' %}">
+        <form class="row g-3" method="POST" action="{% url 'start_bot' %}" enctype="multipart/form-data">
   <!-- csrf_token is used for django to identify data coming is safe -->
           {% csrf_token %}
           <div class="col-12">
@@ -17,16 +17,12 @@
             <input name='keyword' type="text" class="form-control">
           </div>
           <div class="col-12">
-            <label class="form-label">IP(1)</label>
-            <input name='ip1' type="text" class="form-control">
+            <label class="form-label">IP</label>
+            <input type="file" name="ip_file">
           </div>
           <div class="col-12">
-            <label class="form-label">IP(2)</label>
-            <input name='ip2' type="text" class="form-control">
-          </div>
-          <div class="col-12">
-            <label class="form-label">IP(3)</label>
-            <input name='ip3' type="text" class="form-control">
+            <label class="form-label">Website Name</label>
+            <input name='web_name' type="text" class="form-control">
           </div>
           <div class="col-12">
             <button type="submit" class="btn btn-primary" id="btn">Search</button>
