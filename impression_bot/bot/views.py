@@ -37,7 +37,7 @@ def bot(keyword,ip_lst,website_name):
         chrome_options = Options()
         chrome_options.add_argument('--proxy-server={0}:{1}'.format(host, port))
         chrome_options.add_argument(f"--user-agent={user_agent}")
-        driver = webdriver.Chrome('chromedriver.exe', options=chrome_options)
+        driver = webdriver.Chrome(executable_path='~/google_bot/impression_bot/chromedriver', options=chrome_options)
         time.sleep(30)
         try:
             driver.get('https://whatismyipaddress.com/')
@@ -66,7 +66,7 @@ def bot(keyword,ip_lst,website_name):
 
         driver.quit()
         time.sleep(5)
-        driver = webdriver.Chrome('chromedriver.exe',options=chrome_options)
+        driver = webdriver.Chrome(executable_path='~/google_bot/impression_bot/chromedriver',options=chrome_options)
         time.sleep(30)
         driver.get('https://www.google.com/')
 
